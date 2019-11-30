@@ -1,0 +1,66 @@
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int main()
+{
+	char znak;
+	char imie[20][20];
+	char nazwisko[20][20];
+	int wiek[20];
+	int i=0;
+	int licznik = 0;
+	do
+	{
+		cout<<" Wybierz opcje: \n";
+		cout<<"1 - pokaz wszystkie osoby\n";
+		cout<<"2 - dodaj nowa osobe\n";
+		cout<<"3 - usun osobe \n";
+		cout<<"4 - wyswietl najmlodsza osobe \n";
+		cout<<"5 - wyjscie z programu \n";
+		cin>>znak;
+		
+		system("cls");
+		switch (znak)
+		{
+		case '1':
+			for (int i=0; i<licznik;i++){
+				cout<<"Osoba "<<i+1<<" "<<nazwisko[i]<<" "<<imie[i]<<" "<<wiek[i]<<"\n";
+			}
+			break;
+			
+		case '2':
+			if (i<20){
+				cout<<"Podaj imie: ";
+				cin>>imie[i];
+				cout<<"Podaj nazwisko: ";
+				cin>>nazwisko[i];								
+			}
+			if (i<20){
+				cout<<"Podaj wiek: \n";
+				cin>>wiek[i];
+				i++;
+				licznik++;
+			}
+			break;
+			
+			
+		case '3':
+
+		case '4':
+
+			
+			break;
+		case '5':
+		break;	
+
+		}
+	}while (znak!='5');
+//	char imie[20][20];
+//	for (int i=0;i<20;i++){
+//		cin>>imie[i];
+//		cout<<"imie "<<i<<" "<<imie[i]<<"\n";
+
+
+	return 0;
+
+}
