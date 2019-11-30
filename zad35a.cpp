@@ -1,55 +1,91 @@
 #include <iostream>
+#include "conio.h"
 using namespace std;
 
 int main()
 {
-	char odp1[3], odp2[3], odp3[3], odp4[3];
-	char znak = 'n';
+	char odp1[5], odp2[4], odp3[6];
+
+	cout<<"Pytanie 1 \nZbiornik wodny, wiekszy od morza \n";
+	char podp1[]="ocean";
+	cout<<"Odpowiedz ";
+	for (int i=0; i<5; i++) cin>>odp1[i];
+	cout<<"Pytanie 2 \nZwierze, symbol wiedzy \n";
+	char podp2[] = "sowa";
+	cout<<"Odpowiedz ";
+	for (int i=0; i<4; i++) cin>>odp2[i];
+	cout<<"Pytanie 3 \nUrzadzenie do robienia zdjec \n";
+	char podp3[]= "aparat";
+	cout<<"Odpowiedz ";
+	for (int i=0; i<6; i++) cin>>odp3[i];
+	int odp[3] = {0, 0, 0};
+		
+	for (int i=0; i<5;i++) 
+		{
+			if (odp1[i]!=podp1[i]) odp[0]=1;
+		}
+	for (int i=0; i<4;i++) 
+		{
+			if (odp2[i]!=podp2[i]) odp[1]=1;
+		}		
+	for (int i=0; i<6;i++) 
+		{
+			if (odp3[i]!=podp3[i]) odp[2]=1;
+		}
 	do
 	{
-		cout<<"Pytanie 1 \nCzy Gniezno to stolica Polski? tak/nie \n";
-		char podp1[]="nie";
-		cout<<"Odpowiedz ";
-		for (int i=0; i<3; i++) cin>>odp1[i];
-		cout<<"Pytanie 2 \nCzy Polska ma dostep do morza? tak/nie \n";
-		char podp2[] = "tak";
-		cout<<"Odpowiedz ";
-		for (int i=0; i<3; i++) cin>>odp2[i];
-		cout<<"Pytanie 3 \nIle dni ma rok przestepny? (liczba) \n";
-		char podp3[]= "366";
-		cout<<"Odpowiedz ";
-		for (int i=0; i<3; i++) cin>>odp3[i];
-		cout<<"Pytanie 4 \nCzy Berlin to stolica Niemiec? tak/nie \n";
-		char podp4[]="tak";
-		cout<<"Odpowiedz ";
-		for (int i=0; i<3; i++) cin>>odp4[i];
-		for (int i=0;i<3; i++)
+		if (odp[0]==1) 
 		{
-			
-			if (odp1[i]==podp1[i]&&odp2[i]==podp2[i]&&odp3[i]==podp3[i]&&odp4[i]==podp4[i])
+			system("cls");
+			cout<<"Pytanie 1 \nZbiornik wodny, wiekszy od morza \n"; 
+			for (int i=0;i<5;i++) cin>>odp1[i];
+			for (int i=0;i<5;i++)
 			{
-				znak = 'zima';
-				system("cls");
-			}
-			else 
-			{
-				znak = 't';
-				system("cls");
-			}
+				if (odp1[i]==podp1[i])odp[0]=0;				
+				else odp[0]=1;
+			}	
 
 		}
-		
 	}
-	while (znak!='zima');
-	cout<<"Haslo: zima\n";
+	while (odp[0]!=0);
+	do
+	{
+		if (odp[1]==1) 
+		{
+			system("cls");
+			cout<<"Pytanie 2 \nZwierze, symbol wiedzy \n"; 
+			for (int i=0;i<4;i++) cin>>odp2[i];
+			for (int i=0;i<4;i++)
+			{
+				if (odp2[i]==podp2[i])odp[1]=0;				
+				else odp[1]=1;
+			}	
+
+		}
+	}
+	while (odp[1]!=0);	
+	do
+	{
+		if (odp[2]==1) 
+		{
+			system("cls");
+			cout<<"Pytanie 3 \nUrzadzenie do robienia zdjec \n"; 
+			for (int i=0;i<6;i++) cin>>odp3[i];
+			for (int i=0;i<6;i++)
+			{
+				if (odp3[i]==podp3[i])odp[2]=0;				
+				else odp[2]=1;
+			}	
+		}
+	}
+	while (odp[2]!=0);					
+
+	system("cls");		
+	for (int i=0;i<5;i++) cout<<odp1[i]; cout<<"\n";
+	for (int i=0;i<4;i++) cout<<odp2[i]; cout<<"\n";	
+	for (int i=0;i<6;i++) cout<<odp3[i]; cout<<"\n";
+	
+
 	return 0;
 	
 }
-
-//(odp1[i]==podp1[i]);
-
-
-//pytanie i odpowiedz
-//kolejne pytanie
-//sprawdzanie poprawnosci odpowiedzi
-//wyswietlanie odpowiedzi jesli sa prawidlowe
